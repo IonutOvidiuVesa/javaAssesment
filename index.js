@@ -1,4 +1,4 @@
-class JavaAssignement {
+class JavaAssignment {
 //Q1. Write a JavaScript program to compute the sum of an array of integers.
 arraySum = (numbers) => {
     let totalSum = 0;
@@ -83,7 +83,7 @@ sortArray = (array) =>{
 }
 
 // class members as exercise;
-const javaExercise = new JavaAssignement;
+const javaExercise = new JavaAssignment;
 javaExercise.arraySum([4, 5, 6]);
 javaExercise.fibonacciSequence(5);
 javaExercise.checkIfLeapYear(2024);
