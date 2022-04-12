@@ -5,7 +5,7 @@ arraySum = (numbers) => {
 for(let i = 0; i < numbers.length; i++){
     totalSum += numbers[i];
 }
-console.log(totalSum);
+return totalSum;
 }
 
 //Q2. Write a JavaScript program to get the first n Fibonacci numbers
@@ -13,25 +13,27 @@ fibonacciSequence = (number) => {
     let n1 = 0;
     let n2 = 1;
     let nextTerm = 0;
+    let fibonacciSequence = [n1, n2];
     console.log(`The fibonacci sequence of ${number} is:`)
-    for(let i = 1; i <= number; i++){
-        console.log(n1);
+    for(let i = 1; i < number; i++){
         nextTerm = n1+n2;
         n1 = n2;
         n2 = nextTerm;
+        fibonacciSequence.push(n2);
     }
+    return fibonacciSequence;
 }
 
 //Q3. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.
 checkIfLeapYear = (year) => {
     if(year % 4 === 0 && year >= 1000){
-        console.log(`The year ${year} is a leap year`);
+        return `The year ${year} is a leap year`;
     }else if(year % 4 !== 0 && year >= 1000){
-        console.log(`The year ${year} is not a leap year`);
+       return `The year ${year} is not a leap year`;
     }else if(year % 400 === 0 && year < 1000){
-        console.log(`The year ${year} a leap year`);
+        return `The year ${year} a leap year`;
     }else if(year % 400 !== 0 && year < 1000){
-        console.log(`The year ${year} is not a leap year`);
+        return `The year ${year} is not a leap year`;
     }
 }
 
@@ -39,9 +41,9 @@ checkIfLeapYear = (year) => {
 absoluteDifferenceBetween = (number) => {
     let value = Math.abs(number - 19);
     if(value > 19){
-        console.log(value * 3);
+        return value * 3;
     }else{
-        console.log(value);
+        return value;
     }
 }
 
@@ -72,7 +74,7 @@ longestWord = (str) => {
         }
 
     }
-    console.log(`The word with the highest number of characters is ${words[position]} with a length of ${maxlength}`);
+    return `The word with the highest number of characters is ${words[position]} with a length of ${maxlength}`;
 }
 
 //Q8. Write a JavaScript program to sort the items of an array.
@@ -84,11 +86,11 @@ sortArray = (array) =>{
 
 // class members as exercise;
 const javaExercise = new JavaAssignment;
-javaExercise.arraySum([4, 5, 6]);
-javaExercise.fibonacciSequence(5);
-javaExercise.checkIfLeapYear(2024);
-javaExercise.absoluteDifferenceBetween(15);
-console.log(javaExercise.pyGenerator('other'));
-console.log(javaExercise.variableType('number'));
-javaExercise.longestWord('My name is Ionut');
-console.log(javaExercise.sortArray([5, 1, 4, 3]));
+document.getElementById("q1").innerHTML = javaExercise.arraySum([4, 5, 6]);
+document.getElementById("q2").innerHTML = javaExercise.fibonacciSequence(20);
+document.getElementById("q3").innerHTML = javaExercise.checkIfLeapYear(2024);
+document.getElementById("q4").innerHTML = javaExercise.absoluteDifferenceBetween(15);
+document.getElementById("q5").innerHTML = javaExercise.pyGenerator('other');
+document.getElementById("q6").innerHTML = javaExercise.variableType('number');
+document.getElementById("q7").innerHTML = javaExercise.longestWord('My name is Ionut');
+document.getElementById("q8").innerHTML = javaExercise.sortArray([5, 1, 4, 3]);
